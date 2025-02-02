@@ -522,4 +522,7 @@ INQUIRY FROM: CHKG
 TOTAL BAL: $100.00
 AVAILABLE: $100.00 
 ```
+
+**Found In:** 1.0  
+**Integration Build:** N/A 
 ---
