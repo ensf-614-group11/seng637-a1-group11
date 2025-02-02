@@ -1,4 +1,7 @@
-# Defect Report
+# **Defect Report** 
+### **Group 11**
+### **Contributors**: Steven Au, Laurel Flanagan, Rhys Wickens, Austen Zhang
+---
 
 ## Defect ID: 1
 
