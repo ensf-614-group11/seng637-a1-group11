@@ -100,11 +100,11 @@ The amount deposited is not correctly reflected in the updated balance. The upda
 
 #### Priority:
 1 - Critical  
-**Reason:** "Deposit" queries are part of ATM core functionality. System is not functioning as designed. This is a common pathway of interaction for customers.  
+- **Reason:** "Deposit" queries are part of ATM core functionality. System is not functioning as designed. This is a common pathway of interaction for customers.  
 
 #### Severity:
 1 - Critical  
-**Reason:** Issues with deposit transactions impact business operations by introducing risk to accounting. Additionally, there are impacts to customer usability and experience. Errors in these areas will require additional staff hours allocated for customer service and accounting.  
+- **Reason:** Issues with deposit transactions impact business operations by introducing risk to accounting. Additionally, there are impacts to customer usability and experience. Errors in these areas will require additional staff hours allocated for customer service and accounting.  
 
 ### Steps to Reproduce:
 1. Turn system on.  
@@ -176,11 +176,11 @@ System shows that money is being transferred to and from the wrong accounts (i.e
 
 #### Priority:
 2 - High  
-**Reason:** The issue is customer-facing, and correctness of a "Transfer Inquiry" is part of the core functionality of ATM. Transfers are being completed as expected, but information is not showing up properly. Errors on receipts may cause confusion when customers interact with the system.  
+- **Reason:** The issue is customer-facing, and correctness of a "Transfer Inquiry" is part of the core functionality of ATM. Transfers are being completed as expected, but information is not showing up properly. Errors on receipts may cause confusion when customers interact with the system.  
 
 #### Severity:
 3 - Medium  
-**Reason:** The issues have lower impact on business operations. The issue appears to be isolated to the information returned to the customer, but the desired transaction is actually processed correctly.  
+- **Reason:** The issues have lower impact on business operations. The issue appears to be isolated to the information returned to the customer, but the desired transaction is actually processed correctly.  
 
 ### Steps to Reproduce:
 1. Turn system on, enter amount of bills in system.  
@@ -250,11 +250,11 @@ System does not transfer the specified amount. System transfers an amount which 
 
 #### Priority:
 1 - Critical  
-**Reason:** "Transfer" queries are part of ATM core functionality. System is not functionally meeting requirements.  
+- **Reason:** "Transfer" queries are part of ATM core functionality. System is not functionally meeting requirements.  
 
 #### Severity:
 2 - High  
-**Reason:** Received ranking due to impact on business but should not result in an introduction of risk. Impacts customer usability and experience.  
+- **Reason:** Received ranking due to impact on business but should not result in an introduction of risk. Impacts customer usability and experience.  
 
 ### Steps to Reproduce:
 1. Turn system on.  
