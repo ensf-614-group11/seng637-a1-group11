@@ -42,7 +42,7 @@ GUI displays message "Unknown Error", and $500 is ejected from the machine. Syst
 4. Enter card number (choose card number 1).  
 5. Enter correct PIN for card number 1.  
 6. Press 4 on interface number pad to access balance inquiry (option 4).  
-7. Press 4 on interface number pad to access money market account (option 2).  
+7. Press 2 on interface number pad to access money market account (option 2).  
 8. **ERROR:** "Unknown error" message appears on the GUI screen, $500 is ejected from the machine, and system shows account details from savings account. Logging message indicates a SUCCESS response for a withdrawal of $500 when an inquiry was made.  
 
 ### Log:
