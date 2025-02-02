@@ -29,11 +29,11 @@ Amount withdrawn is not correct. Amount is actually the next available option on
 
 #### Priority:
 1 - Critical  
-**Reason:** "Withdrawal" queries are part of ATM core functionality.  
+- **Reason:** "Withdrawal" queries are part of ATM core functionality.  
 
 #### Severity:
 1 - Critical  
-**Reason:** Issues with "withdrawal" queries impact business operations by introducing risk into accounting error. Additionally, there are major impacts to customer usability and experience.  
+- **Reason:** Issues with "withdrawal" queries impact business operations by introducing risk into accounting error. Additionally, there are major impacts to customer usability and experience.  
 
 ### Steps to Reproduce:
 1. Turn system on.  
