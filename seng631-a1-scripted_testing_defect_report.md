@@ -1,10 +1,128 @@
 # Defect Report
 
----
-
 ## Defect ID: 1
 
-## **Title:** Test Case #14: Withdrawn amount incorrect based on selection  
+### **Title:** Money Market Balance Inquiry Issue: "Unknown error" message with $500 withdraw displays when selecting money market under balance inquiry for card 1  
+**Work Item Type:** Bug  
+**Assigned To:** Unassigned  
+**State:** Active  
+**Reason:** Approved  
+**Tags:** Exploratory; Scripted  
+**Priority:** 1  
+**Severity:** 1 - Critical  
+
+### Repro Steps:
+- **Version in which bug was found:** V1.0  
+- **Bug was found:** The bug was found in the exploratory testing.  
+- **Use Case:** Inquiry  
+- **Function being tested:** Balance inquiry for card 1 with access to checking and savings account.  
+- **Initial state of system:** Selecting money market account to inquire about the balance.  
+
+#### Expected Outcome:
+GUI message indicating that the card holder does not have a Money Market account.  
+
+#### Actual Outcome:
+GUI displays message "Unknown Error", and $500 is ejected from the machine. System asks the user if they would like to do another transaction.  
+
+#### Priority:
+2 - High  
+- **Reason:** Withdrawals should not be happening when inquiries are made. However, this error may only be experienced by a subset of customers. The pathway to get to this error is more specific.  
+
+#### Severity:
+1 - Critical  
+- **Reason:** Critical severity ranking was assigned because although the issue does not seem to impact operations, the team will want to confirm that the error is isolated and does not trigger unintended withdrawals of $500 as indicated in the logging message. Withdrawals should not be happening when inquiries to the system are made.  
+
+### Steps to Reproduce:
+1. Turn system on.  
+2. Operator adds 10 $20 bills to ATM System.  
+3. Insert debit card (card number 1).  
+4. Enter card number (choose card number 1).  
+5. Enter correct PIN for card number 1.  
+6. Press 4 on interface number pad to access balance inquiry (option 4).  
+7. Press 4 on interface number pad to access money market account (option 2).  
+8. **ERROR:** "Unknown error" message appears on the GUI screen, $500 is ejected from the machine, and system shows account details from savings account. Logging message indicates a SUCCESS response for a withdrawal of $500 when an inquiry was made.  
+
+### Log:
+```
+Message:   INQUIRY  CARD# 1 TRANS# 1 FROM  1 NO TO NO AMOUNT
+Response:  SUCCESS
+Dispensed: $500.00
+```
+
+### Receipt:
+```
+Fri Jan 31 14:15:49 MST 2025
+First National Bank of Podunk
+ATM #42 Gordon College
+CARD 2 TRANS #1
+INQUIRY FROM: SVGS
+
+TOTAL BAL: $1000.00
+AVAILABLE: $1000.00
+```
+
+### System Info:
+- **Version in which bug was found:** V1.0  
+- **Tests were performed with debit card with card number "1".  
+- **Note:** Card number "1" should not have access to a Money Market account.  
+
+**Found In:** 1.0  
+**Integration Build:** N/A  
+
+---
+
+## Defect ID: 2
+
+### **Title:** System freezes when incorrect card # entered with incorrect PIN (i.e., Card #3 with PIN 42)  
+**Work Item Type:** Bug  
+**Assigned To:** Unassigned  
+**State:** Active  
+**Reason:** Regression  
+**Tags:** Exploratory  
+**Priority:** 2  
+**Severity:** 2 - High  
+
+### Repro Steps:
+- **Version in which bug was found:** V1.0  
+- **Bug was found:** The bug was found from exploratory testing.  
+- **Use Case:** Invalid PIN Extension  
+- **Function being tested:** System rejects an invalid card and PIN.  
+- **Initial state of system:** System is requesting user to insert card.  
+
+#### Expected Outcome:
+After incorrect card is entered, system should display an error message indicating that the card number does not exist.  
+
+#### Actual Outcome:
+After incorrect card is entered, system asks for PIN. When PIN is entered, system freezes and does not display any message.  
+
+#### Priority:
+2 - High  
+- **Reason:** This error is customer-facing and may cause inconveniences, but the issue does not impact customer accounts.  
+
+#### Severity:
+2 - High  
+- **Reason:** High because the error does not have significant impact on the core functionality of the ATM system.  
+
+### Steps to Reproduce:
+1. System initial state: ATM System is off.  
+2. Startup ATM System by pressing 'ON'.  
+3. Operator adds bills to system (10).  
+4. Insert debit card.  
+5. Enter card #3 (invalid card).  
+6. Enter an incorrect PIN, in this case, use 908.  
+7. System freezes with no message. 'CANCEL' button does nothing, 'OFF' button does nothing.  
+
+### System Info:
+- **Version in which bug was found:** V1.0  
+
+**Found In:** 1.0  
+**Integration Build:** <None>  
+
+---
+
+## Defect ID: 3
+
+### **Title:** Test Case #14: Withdrawn amount incorrect based on selection  
 **Work Item Type:** Bug  
 **Assigned To:** Unassigned  
 **State:** Active  
@@ -73,9 +191,9 @@ AVAILABLE: $40.00
 
 ---
 
-## Defect ID: 2
+## Defect ID: 4
 
-## **Title:** Test Case #22: System does not handle correctly depositing requested amount into account  
+### **Title:** Test Case #22: System does not handle correctly depositing requested amount into account  
 **Work Item Type:** Bug  
 **Assigned To:** Unassigned  
 **State:** Active  
@@ -149,9 +267,9 @@ AVAILABLE: $100.00
 
 ---
 
-## Defect ID: 3
+## Defect ID: 5
 
-## **Title:** Test Case #29: Receipt is incorrect after completing a successful transfer - to and from accounts shown backwards  
+### **Title:** Test Case #29: Receipt is incorrect after completing a successful transfer - to and from accounts shown backwards  
 **Work Item Type:** Bug  
 **Assigned To:** Unassigned  
 **State:** Active  
@@ -223,9 +341,9 @@ AVAILABLE: $1039.50
 
 ---
 
-## Defect ID: 4
+## Defect ID: 6
 
-**Title:** Test Case #29: Incorrect amount is transferred when making a transfer request  
+### **Title:** Test Case #29: Incorrect amount is transferred when making a transfer request  
 **Work Item Type:** Bug  
 **Assigned To:** Unassigned  
 **State:** Active  
@@ -295,9 +413,9 @@ AVAILABLE: $1039.50
 
 ---
 
-## Defect ID: 5
+## Defect ID: 7
 
-**Title:** Test Case #33: Wrong options under balance inquiry for card 1  
+### **Title:** Test Case #33: Wrong options under balance inquiry for card 1  
 **Work Item Type:** Bug  
 **Assigned To:** Unassigned  
 **State:** Active  
@@ -347,129 +465,9 @@ Savings account does not show as an option for balance inquiry when using Card 1
 
 ---
 
-## Defect ID: 16
+## Defect ID: 8
 
-**Title:** Money Market Balance Inquiry Issue: "Unknown error" message with $500 withdraw displays when selecting money market under balance inquiry for card 1  
-**Work Item Type:** Bug  
-**Assigned To:** Unassigned  
-**State:** Active  
-**Reason:** Approved  
-**Tags:** Exploratory; Scripted  
-**Priority:** 1  
-**Severity:** 1 - Critical  
-
-### Repro Steps:
-- **Version in which bug was found:** V1.0  
-- **Bug was found:** The bug was found in the exploratory testing.  
-- **Use Case:** Inquiry  
-- **Function being tested:** Balance inquiry for card 1 with access to checking and savings account.  
-- **Initial state of system:** Selecting money market account to inquire about the balance.  
-
-#### Expected Outcome:
-GUI message indicating that the card holder does not have a Money Market account.  
-
-#### Actual Outcome:
-GUI displays message "Unknown Error", and $500 is ejected from the machine. System asks the user if they would like to do another transaction.  
-
-#### Priority:
-2 - High  
-- **Reason:** Withdrawals should not be happening when inquiries are made. However, this error may only be experienced by a subset of customers. The pathway to get to this error is more specific.  
-
-#### Severity:
-1 - Critical  
-- **Reason:** Critical severity ranking was assigned because although the issue does not seem to impact operations, the team will want to confirm that the error is isolated and does not trigger unintended withdrawals of $500 as indicated in the logging message. Withdrawals should not be happening when inquiries to the system are made.  
-
-### Steps to Reproduce:
-1. Turn system on.  
-2. Operator adds 10 $20 bills to ATM System.  
-3. Insert debit card (card number 1).  
-4. Enter card number (choose card number 1).  
-5. Enter correct PIN for card number 1.  
-6. Press 4 on interface number pad to access balance inquiry (option 4).  
-7. Press 4 on interface number pad to access money market account (option 2).  
-8. **ERROR:** "Unknown error" message appears on the GUI screen, $500 is ejected from the machine, and system shows account details from savings account. Logging message indicates a SUCCESS response for a withdrawal of $500 when an inquiry was made.  
-
-### Log:
-```
-Message:   INQUIRY  CARD# 1 TRANS# 1 FROM  1 NO TO NO AMOUNT
-Response:  SUCCESS
-Dispensed: $500.00
-```
-
-### Receipt:
-```
-Fri Jan 31 14:15:49 MST 2025
-First National Bank of Podunk
-ATM #42 Gordon College
-CARD 2 TRANS #1
-INQUIRY FROM: SVGS
-
-TOTAL BAL: $1000.00
-AVAILABLE: $1000.00
-```
-
-### System Info:
-- **Version in which bug was found:** V1.0  
-- **Tests were performed with debit card with card number "1".  
-- **Note:** Card number "1" should not have access to a Money Market account.  
-
-**Found In:** 1.0  
-**Integration Build:** N/A  
-
----
-
-## Defect ID: 17
-
-**Title:** System freezes when incorrect card # entered with incorrect PIN (i.e., Card #3 with PIN 42)  
-**Work Item Type:** Bug  
-**Assigned To:** Unassigned  
-**State:** Active  
-**Reason:** Regression  
-**Tags:** Exploratory  
-**Priority:** 2  
-**Severity:** 2 - High  
-
-### Repro Steps:
-- **Version in which bug was found:** V1.0  
-- **Bug was found:** The bug was found from exploratory testing.  
-- **Use Case:** Invalid PIN Extension  
-- **Function being tested:** System rejects an invalid card and PIN.  
-- **Initial state of system:** System is requesting user to insert card.  
-
-#### Expected Outcome:
-After incorrect card is entered, system should display an error message indicating that the card number does not exist.  
-
-#### Actual Outcome:
-After incorrect card is entered, system asks for PIN. When PIN is entered, system freezes and does not display any message.  
-
-#### Priority:
-2 - High  
-- **Reason:** This error is customer-facing and may cause inconveniences, but the issue does not impact customer accounts.  
-
-#### Severity:
-2 - High  
-- **Reason:** High because the error does not have significant impact on the core functionality of the ATM system.  
-
-### Steps to Reproduce:
-1. System initial state: ATM System is off.  
-2. Startup ATM System by pressing 'ON'.  
-3. Operator adds bills to system (10).  
-4. Insert debit card.  
-5. Enter card #3 (invalid card).  
-6. Enter an incorrect PIN, in this case, use 908.  
-7. System freezes with no message. 'CANCEL' button does nothing, 'OFF' button does nothing.  
-
-### System Info:
-- **Version in which bug was found:** V1.0  
-
-**Found In:** 1.0  
-**Integration Build:** <None>  
-
----
-
-## Defect ID: 18
-
-**Title:** Test Case #34: Incorrect Receipt from Inquiry: Card Number is Wrong  
+### **Title:** Test Case #34: Incorrect Receipt from Inquiry: Card Number is Wrong  
 **Work Item Type:** Bug  
 **Assigned To:** Unassigned  
 **State:** Active  
