@@ -10,7 +10,7 @@
 **Assigned To:** Unassigned  
 **State:** Active  
 **Reason:** Approved  
-**Tags:** Exploratory; Scripted; Regression  
+**Tags:** Exploratory; Scripted; Regression;  
 **Priority:** 2  
 **Severity:** 1 - Critical  
 
@@ -45,14 +45,14 @@ GUI displays message "Unknown Error", and $500 is ejected from the machine. Syst
 7. Press 2 on interface number pad to access money market account (option 2).  
 8. **ERROR:** "Unknown error" message appears on the GUI screen, $500 is ejected from the machine, and system shows account details from savings account. Logging message indicates a SUCCESS response for a withdrawal of $500 when an inquiry was made.  
 
-### Log:
+#### Log:
 ```
 Message:   INQUIRY  CARD# 1 TRANS# 1 FROM  1 NO TO NO AMOUNT
 Response:  SUCCESS
 Dispensed: $500.00
 ```
 
-### Receipt:
+#### Receipt:
 ```
 Fri Jan 31 14:15:49 MST 2025
 First National Bank of Podunk
@@ -64,13 +64,26 @@ TOTAL BAL: $1000.00
 AVAILABLE: $1000.00
 ```
 
+#### **Regression Testing:**
+- **Regression Test Version:** V1.1
+- **Regression Test Outcome:** Error from V1.0 is still present in V1.1 Error is found when following "Steps to Reproduce"
+**Steps to Reproduce:** 
+1. Turn system on.  
+2. Operator adds 10 $20 bills to ATM System.  
+3. Insert debit card (card number 1).  
+4. Enter card number (choose card number 1).  
+5. Enter correct PIN for card number 1.  
+6. Press 4 on interface number pad to access balance inquiry (option 4).  
+7. Press 2 on interface number pad to access money market account (option 2).  
+8. **ERROR:** "Unknown error" message appears on the GUI screen, $500 is ejected from the machine, and system shows account details from savings account. Logging message indicates a SUCCESS response for a withdrawal of $500 when an inquiry was made.
+
 ### System Info:
 - **Version in which bug was found:** V1.0  
 - **Tests were performed with debit card with card number "1".  
 - **Note:** Card number "1" should not have access to a Money Market account.  
 
 **Found In:** 1.0  
-**Integration Build:** N/A  
+**Integration Build:** N/A 
 
 ---
 
@@ -79,9 +92,9 @@ AVAILABLE: $1000.00
 ### **Title:** System freezes when incorrect card # entered with incorrect PIN (i.e., Card #3 with PIN 42)  
 **Work Item Type:** Bug  
 **Assigned To:** Unassigned  
-**State:** Active  
-**Reason:** Approved
-**Tags:** Exploratory  
+**State:** Closed  
+**Reason:** Fixed  
+**Tags:** Exploratory; Regression;  
 **Priority:** 2  
 **Severity:** 2 - High  
 
@@ -115,11 +128,15 @@ After incorrect card is entered, system asks for PIN. When PIN is entered, syste
 6. Enter an incorrect PIN, in this case, use 908.  
 7. System freezes with no message. 'CANCEL' button does nothing, 'OFF' button does nothing.  
 
+### Regression Testing:
+- **Regression Test Version:** V1.1
+- **Regression Test Outcome:** Bug is no longer present in V1.1. Error is no longer present when following "Steps to Reproduce"
+
 ### System Info:
 - **Version in which bug was found:** V1.0  
 
 **Found In:** 1.0  
-**Integration Build:** <None>  
+**Integration Build:** 1.1  
 
 ---
 
@@ -130,13 +147,13 @@ After incorrect card is entered, system asks for PIN. When PIN is entered, syste
 **Assigned To:** Unassigned  
 **State:** Active  
 **Reason:** Approved  
-**Tags:** Exploratory; Scripted  
+**Tags:** Exploratory; Scripted; Regression  
 **Priority:** 1  
 **Severity:** 1 - Critical  
 
 ### Repro Steps:
 - **Version in which bug was found:** V1.0  
-- **Bug was found:** The bug was found in both the exploratory testing and the scripted testing.  
+- **Bug was found:** The bug was found in both the exploratory testing and the scripted testing.  =
 - **Test Case:** 14  
 - **Use Case:** Withdrawal  
 - **Function being tested:** System performs a legitimate withdrawal transaction properly.  
@@ -167,14 +184,14 @@ Amount withdrawn is not correct. Amount is actually the next available option on
 8. **ERROR:** Amount you clicked is not the amount that was withdrawn.  
    - **Note:** Error present for all accounts.  
 
-### Log:
+#### Log:
 ```
 Message:   WITHDRAW CARD# 1 TRANS# 7 FROM  0 NO TO $60.00
 Response:  SUCCESS
 Dispensed: $60.00
 ```
 
-### Receipt:
+#### Receipt:
 ```
 Thu Jan 30 10:53:14 MST 2025
 First National Bank of Podunk
@@ -185,6 +202,39 @@ AMOUNT: $60.00
 TOTAL BAL: $40.00
 AVAILABLE: $40.00
 ```
+
+#### **Regression Testing:**
+**Regression Test Version:** V1.1  
+**Regression Test Outcome:** Bug is fixed in V1.1 but the required "Expected Outcome" is still not fully met. The system correctly executes the transaction, withdrawal request successfully completes for the expected amount. However, the dollar sign is missing on the GUI for the $60 option. The receipt still shows the wrong card number. The fix does not meet the expectations of "Expected Outcome" to close this bug.  
+**Steps to Reproduce:**  
+1. Turn system on.  
+2. Operator adds 10 $20 bills to ATM System.  
+3. Enter card number (choose card number 1).  
+4. Enter correct PIN for card number 1.  
+5. Press 1 on interface number pad to access withdrawal (option 1).  
+6. Press 1 to request withdrawal from checking account (option 1).  
+7. Select amount to withdraw. Choose an amount that the system currently has and which is not greater than the account balance.  
+8. **ERROR:** System correctly executes the transaction. However, the dollar sign is missing for the $60 option, and the receipt still shows the wrong card number (receipt shows card 2, when transaction was done using card number 1).
+
+**Log:**
+```
+Message:   WITHDRAW CARD# 1 TRANS# 1 FROM  0 NO TO $40.00
+Response:  SUCCESS
+Dispensed: $40.00
+```
+
+**Receipt:**
+```
+Thu Jan 30 11:34:38 MST 2025
+First National Bank of Podunk
+ATM #42 Gordon College
+CARD 2 TRANS #1
+WITHDRAWAL FROM: CHKG
+AMOUNT: $40.00
+TOTAL BAL: $60.00
+AVAILABLE: $60.00
+```
+
 ### System Info:
 - **Version in which bug was found:** V1.0  
 - **Tests were performed with debit card with card number "1".  
@@ -201,7 +251,7 @@ AVAILABLE: $40.00
 **Assigned To:** Unassigned  
 **State:** Active  
 **Reason:** Approved  
-**Tags:** Exploratory; Scripted  
+**Tags:** Exploratory; Scripted; Regression  
 **Priority:** 1  
 **Severity:** 1 - Critical  
 
@@ -239,7 +289,7 @@ The amount deposited is not correctly reflected in the updated balance. The upda
 9. Click to insert envelope.  
 10. **ERROR:** Total balance updated to $10 less than what was deposited (e.g., depositing $40 results in a balance increase of $30).  
 
-### Log:
+#### Log:
 ```
 INIT_DEP CARD# 1 TRANS# 3 NO FROM TO  0 $40.00
 Response:  SUCCESS
@@ -248,7 +298,7 @@ Message:   COMP_DEP CARD# 1 TRANS# 3 NO FROM TO  0 $40.00
 Response:  SUCCESS
 ```
 
-### Receipt:
+#### Receipt:
 ```
 Thu Jan 30 11:05:27 MST 2025
 First National Bank of Podunk
@@ -260,6 +310,41 @@ TOTAL BAL: $130.00
 AVAILABLE: $100.00
 ```
 
+#### **Regression Testing:**
+**Regression Test Version:** V1.1  
+**Regression Test Outcome:** The transaction is processed but the updated balance is $0.10 less than the expected value.  
+**Steps to Reproduce:**  
+1. Turn system on.  
+2. Operator adds 10 $20 bills to ATM System.  
+3. Insert debit card (card number 1).  
+4. Enter card number (choose card number 1).  
+5. Enter correct PIN for card number 1.  
+6. Press 2 on interface number pad to access deposit (option 2).  
+7. Press 1 on interface number pad to request deposit to checking account (option 1).  
+8. Enter amount to deposit.  
+9. Click to insert envelope.  
+10. **ERROR:** Total balance updated to $0.10 less than what was deposited (e.g., depositing $40 results in a balance increase of $39.90).  
+
+**Log:**
+```
+Message:   INIT_DEP CARD# 1 TRANS# 1 NO FROM TO  0 $40.00
+Response:  SUCCESS
+Envelope:  received
+Message:   COMP_DEP CARD# 1 TRANS# 1 NO FROM TO  0 $40.00
+Response:  SUCCESS
+```
+
+**Receipt:**
+```
+Thu Jan 30 11:37:59 MST 2025
+First National Bank of Podunk
+ATM #42 Gordon College
+CARD 2 TRANS #1
+DEPOSIT TO: CHKG
+AMOUNT: $40.00
+TOTAL BAL: $139.90
+AVAILABLE: $100.00
+```
 
 ### System Info:
 - **Version in which bug was found:** V1.0  
@@ -277,7 +362,7 @@ AVAILABLE: $100.00
 **Assigned To:** Unassigned  
 **State:** Active  
 **Reason:** Approved  
-**Tags:** Exploratory; Scripted  
+**Tags:** Exploratory; Scripted; Regression  
 **Priority:** 2  
 **Severity:** 3 - Medium  
 
@@ -312,13 +397,13 @@ System shows that money is being transferred to and from the wrong accounts (i.e
 6. Enter amount to transfer (e.g., $20).  
 7. **ERROR:** Display message is incorrect, says accounts "to" and "from" backwards of what was selected (e.g., CHKG to SVGS).  
 
-### Log:
+#### Log:
 ```
 Message:   TRANSFER CARD# 1 TRANS# 1 FROM  0 TO  1 $39.50
 Response:  SUCCESS
 ```
 
-### Receipt:
+#### Receipt:
 ```
 Thu Jan 30 11:11:59 MST 2025
 First National Bank of Podunk
@@ -329,6 +414,44 @@ AMOUNT: $39.50
 TOTAL BAL: $1039.50
 AVAILABLE: $1039.50
 ```
+
+#### **Regression Testing:**
+**Regression Test Version:** V1.1  
+**Regression Test Outcome:** This update fixes the receipt to show the to and from accounts correctly. Receipt now correctly shows a transfer from Savings account to Checking account.The amount of the transfer is now correct in the receipt but the accounts to and from listed on the receipt and the card number are still incorrect.  
+**Steps to Reproduce:** 
+1. Turn system on, enter amount of bills in system.  
+2. Click insert card, enter card number, enter correct PIN.  
+3. Click Transfer (option 3).  
+4. Click account to transfer from (e.g., savings).  
+5. Click account to transfer to (e.g., checking).  
+6. Enter amount to transfer (e.g., $20).  
+7. **ERROR:** The receipt is showing the wrong card number. A transfer inquiry for CARD 1 should be correctly indicated on the receipt.
+
+**Log:**
+```
+Message:   TRANSFER CARD# 1 TRANS# 1 FROM  0 TO  1 $40.00
+Response:  SUCCESS
+```
+
+**Receipt:**
+```
+Thu Jan 30 11:40:02 MST 2025
+First National Bank of Podunk
+ATM #42 Gordon College
+CARD 2 TRANS #1
+TRANSFER FROM: SVGS TO: CHKG
+AMOUNT: $40.00
+TOTAL BAL: $1040.00
+AVAILABLE: $1040.00
+```
+
+### System Info:
+- **Version in which bug was found:** V1.0  
+- **Tests were performed with debit card with card number "1".  
+
+**Found In:** 1.0  
+**Integration Build:** N/A 
+
 
 
 ### System Info:
@@ -351,7 +474,7 @@ AVAILABLE: $1039.50
 **Assigned To:** Unassigned  
 **State:** Active  
 **Reason:** Approved  
-**Tags:** Exploratory; Scripted  
+**Tags:** Exploratory; Scripted; Regression   
 **Priority:** 1  
 **Severity:** 2 - High  
 
@@ -389,13 +512,13 @@ System does not transfer the specified amount. System transfers an amount which 
 9. Enter amount to transfer ($20.00).  
 10. **ERROR:** Amount transferred and updated balance are incorrect - the amount shown is $0.50 less than what was requested to be transferred.  
 
-### Log:
+#### Log:
 ```
 Message:   TRANSFER CARD# 1 TRANS# 1 FROM  0 TO  1 $39.50
 Response:  SUCCESS
 ```
 
-### Receipt:
+#### Receipt:
 ```
 Thu Jan 30 11:11:59 MST 2025
 First National Bank of Podunk
@@ -405,6 +528,36 @@ TRANSFER FROM: SVGS TO: CHKG
 AMOUNT: $39.50
 TOTAL BAL: $1039.50
 AVAILABLE: $1039.50
+```
+
+#### **Regression Testing:**  
+- **Regression Test Version:** V1.1  
+- **Regression Test Outcome:** This update fixes the receipt to show the to and from accounts correctly but receipt is showing the incorrect card number. The amount transferred is now correct on the receipt. The card number is showing "2" when the card number should be "1"  
+- **Steps to Reproduce:** 
+1. Turn system on, enter amount of bills in system.  
+2. Click insert card, enter card number, enter correct PIN.  
+3. Click Transfer (option 3).  
+4. Click account to transfer from (e.g., savings).  
+5. Click account to transfer to (e.g., checking).  
+6. Enter amount to transfer (e.g., $20).  
+7. **ERROR:** The receipt is showing the wrong card number. A transfer inquiry for CARD 1 should be correctly indicated on the receipt.
+
+**Log:**
+```
+Message:   TRANSFER CARD# 1 TRANS# 1 FROM  0 TO  1 $40.00
+Response:  SUCCESS
+```
+
+**Receipt:**
+```
+Thu Jan 30 11:40:02 MST 2025
+First National Bank of Podunk
+ATM #42 Gordon College
+CARD 2 TRANS #1
+TRANSFER FROM: SVGS TO: CHKG
+AMOUNT: $40.00
+TOTAL BAL: $1040.00
+AVAILABLE: $1040.00
 ```
 
 ### System Info:
@@ -421,9 +574,9 @@ AVAILABLE: $1039.50
 ### **Title:** Test Case #33: Wrong options under balance inquiry for card 1  
 **Work Item Type:** Bug  
 **Assigned To:** Unassigned  
-**State:** Active  
-**Reason:** Approved  
-**Tags:** Exploratory; Scripted  
+**State:** Resolved  
+**Reason:** Fixed  
+**Tags:** Exploratory; Scripted; Regression;  
 **Priority:** 1  
 **Severity:** 1 - Critical  
 
@@ -458,6 +611,28 @@ Savings account does not show as an option for balance inquiry when using Card 1
 6. Press 4 on interface number pad to access balance inquiry (option 4).  
 7. **ERROR:** There is no option to select "Savings Account" for account 1. There is an option for Money Market for account 2, but it gives an error when selected.  
 
+**Log:**
+```
+Message:   TRANSFER CARD# 1 TRANS# 1 FROM  0 TO  1 $40.00
+Response:  SUCCESS
+```
+
+**Receipt:**
+```
+Thu Jan 30 11:40:02 MST 2025
+First National Bank of Podunk
+ATM #42 Gordon College
+CARD 2 TRANS #1
+TRANSFER FROM: SVGS TO: CHKG
+AMOUNT: $40.00
+TOTAL BAL: $1040.00
+AVAILABLE: $1040.00
+```
+
+#### **Regression Testing:**
+**Regression Test Version:** V1.1  
+**Regression Test Outcome:** This update fixes the issue where "Savings" account was not showing up when making a balance inquiry.  
+
 ### System Info:
 - **Version in which bug was found:** V1.0  
 - **Tests were performed with debit card with card number "1".  
@@ -475,7 +650,7 @@ Savings account does not show as an option for balance inquiry when using Card 1
 **Assigned To:** Unassigned  
 **State:** Active  
 **Reason:** Approved  
-**Tags:** Exploratory; Scripted  
+**Tags:** Exploratory; Scripted; Regression  
 **Priority:** 1  
 **Severity:** 3 - Medium  
 
@@ -511,7 +686,7 @@ The receipt is not correct. It shows Card 2 when the transaction was performed w
 7. Press 1 on interface number pad to select checking account (option 1).  
 8. **ERROR:** The receipt provided displays Card #2 when the transaction was performed with Card #1.  
 
-### Receipt:
+#### Receipt:
 ```
 Thu Jan 30 10:39:28 MST 2025
 First National Bank of Podunk
@@ -523,10 +698,61 @@ TOTAL BAL: $100.00
 AVAILABLE: $100.00 
 ```
 
+**Log:**
+```
+Message:   TRANSFER CARD# 1 TRANS# 1 FROM  0 TO  1 $40.00
+Response:  SUCCESS
+```
+
+**Receipt:**
+```
+Thu Jan 30 11:40:02 MST 2025
+First National Bank of Podunk
+ATM #42 Gordon College
+CARD 2 TRANS #1
+TRANSFER FROM: SVGS TO: CHKG
+AMOUNT: $40.00
+TOTAL BAL: $1040.00
+AVAILABLE: $1040.00
+```
+
+#### **Regression Testing:**
+**Regression Test Version:** V1.1  
+**Regression Test Outcome:** The receipt is not correct. It shows Card 2 when the transaction was performed with Card 1. The balance shown was correct.  
+**Steps to Reproduce:**  
+1. Turn system on, enter amount of bills in system.  
+2. Click insert card, enter card number, enter correct PIN.  
+3. Click Transfer (option 3).  
+4. Click account to transfer from (e.g., savings).  
+5. Click account to transfer to (e.g., checking).  
+6. Enter amount to transfer (e.g., $20).  
+7. **ERROR:** The receipt is showing the wrong card number. A transfer inquiry for CARD 1 should be correctly indicated on the receipt.
+
+**Log:**
+```
+Message:   INQUIRY  CARD# 1 TRANS# 1 FROM  2 NO TO NO AMOUNT
+Response:  FAILURE Invalid account type
+Message:   INQUIRY  CARD# 1 TRANS# 2 FROM  0 NO TO NO AMOUNT
+Response:  SUCCESS
+```
+
+**Receipt:**
+```
+Thu Jan 30 11:43:17 MST 2025
+First National Bank of Podunk
+ATM #42 Gordon College
+CARD 2 TRANS #2
+INQUIRY FROM: CHKG
+
+TOTAL BAL: $100.00
+AVAILABLE: $100.00
+```
+
 ### System Info:
 - **Version in which bug was found:** V1.0  
 - Tests were performed with debit card with card number "1".
 
 **Found In:** 1.0  
 **Integration Build:** N/A 
+
 ---
