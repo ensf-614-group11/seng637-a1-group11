@@ -64,7 +64,7 @@ TOTAL BAL: $1000.00
 AVAILABLE: $1000.00
 ```
 
-#### **Regression Testing:**
+### **Regression Testing:**
 - **Regression Test Version:** V1.1
 - **Regression Test Outcome:** Error from V1.0 is still present in V1.1 Error is found when following "Steps to Reproduce"
 **Steps to Reproduce:** 
@@ -203,7 +203,7 @@ TOTAL BAL: $40.00
 AVAILABLE: $40.00
 ```
 
-#### **Regression Testing:**
+### **Regression Testing:**
 **Regression Test Version:** V1.1  
 **Regression Test Outcome:** Bug is fixed in V1.1 but the required "Expected Outcome" is still not fully met. The system correctly executes the transaction, withdrawal request successfully completes for the expected amount. However, the dollar sign is missing on the GUI for the $60 option. The receipt still shows the wrong card number. The fix does not meet the expectations of "Expected Outcome" to close this bug.  
 **Steps to Reproduce:**  
@@ -310,7 +310,7 @@ TOTAL BAL: $130.00
 AVAILABLE: $100.00
 ```
 
-#### **Regression Testing:**
+### **Regression Testing:**
 **Regression Test Version:** V1.1  
 **Regression Test Outcome:** The transaction is processed but the updated balance is $0.10 less than the expected value.  
 **Steps to Reproduce:**  
@@ -415,7 +415,7 @@ TOTAL BAL: $1039.50
 AVAILABLE: $1039.50
 ```
 
-#### **Regression Testing:**
+### **Regression Testing:**
 **Regression Test Version:** V1.1  
 **Regression Test Outcome:** This update fixes the receipt to show the to and from accounts correctly. Receipt now correctly shows a transfer from Savings account to Checking account.The amount of the transfer is now correct in the receipt but the accounts to and from listed on the receipt and the card number are still incorrect.  
 **Steps to Reproduce:** 
@@ -530,7 +530,7 @@ TOTAL BAL: $1039.50
 AVAILABLE: $1039.50
 ```
 
-#### **Regression Testing:**  
+### **Regression Testing:**  
 - **Regression Test Version:** V1.1  
 - **Regression Test Outcome:** This update fixes the receipt to show the to and from accounts correctly but receipt is showing the incorrect card number. The amount transferred is now correct on the receipt. The card number is showing "2" when the card number should be "1"  
 - **Steps to Reproduce:** 
@@ -629,7 +629,7 @@ TOTAL BAL: $1040.00
 AVAILABLE: $1040.00
 ```
 
-#### **Regression Testing:**
+### **Regression Testing:**
 **Regression Test Version:** V1.1  
 **Regression Test Outcome:** This update fixes the issue where "Savings" account was not showing up when making a balance inquiry.  
 
@@ -716,7 +716,7 @@ TOTAL BAL: $1040.00
 AVAILABLE: $1040.00
 ```
 
-#### **Regression Testing:**
+### **Regression Testing:**
 **Regression Test Version:** V1.1  
 **Regression Test Outcome:** The receipt is not correct. It shows Card 2 when the transaction was performed with Card 1. The balance shown was correct.  
 **Steps to Reproduce:**  
