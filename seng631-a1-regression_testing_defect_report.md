@@ -7,14 +7,12 @@
 
 ### **Title:** Money Market Balance Inquiry Issue: "Unknown error" message with $500 withdraw displays when selecting money market under balance inquiry for card 1  
 **Work Item Type:** Bug  
-**Assigned To:** Unassigned  
 **State:** Active  
 **Reason:** Approved  
 **Tags:** Exploratory; Scripted; Regression;  
 **Priority:** 2  
 **Severity:** 1 - Critical  
 
-### Repro Steps:
 - **Version in which bug was found:** V1.0
 - **Bug was found:** The bug was found in the exploratory testing.  
 - **Use Case:** Inquiry  
@@ -83,7 +81,6 @@ AVAILABLE: $1000.00
 - **Note:** Card number "1" should not have access to a Money Market account.  
 
 **Found In:** 1.0  
-**Integration Build:** N/A 
 
 ---
 
@@ -91,14 +88,12 @@ AVAILABLE: $1000.00
 
 ### **Title:** System freezes when incorrect card # entered with incorrect PIN (i.e., Card #3 with PIN 42)  
 **Work Item Type:** Bug  
-**Assigned To:** Unassigned  
 **State:** Closed  
 **Reason:** Fixed  
 **Tags:** Exploratory; Regression;  
 **Priority:** 2  
 **Severity:** 2 - High  
 
-### Repro Steps:
 - **Version in which bug was found:** V1.0  
 - **Bug was found:** The bug was found from exploratory testing.  
 - **Use Case:** Invalid PIN Extension  
@@ -136,7 +131,6 @@ After incorrect card is entered, system asks for PIN. When PIN is entered, syste
 - **Version in which bug was found:** V1.0  
 
 **Found In:** 1.0  
-**Integration Build:** 1.1  
 
 ---
 
@@ -144,14 +138,12 @@ After incorrect card is entered, system asks for PIN. When PIN is entered, syste
 
 ### **Title:** Test Case #14: Withdrawn amount incorrect based on selection  
 **Work Item Type:** Bug  
-**Assigned To:** Unassigned  
 **State:** Active  
 **Reason:** Approved  
 **Tags:** Exploratory; Scripted; Regression  
 **Priority:** 1  
 **Severity:** 1 - Critical  
 
-### Repro Steps:
 - **Version in which bug was found:** V1.0  
 - **Bug was found:** The bug was found in both the exploratory testing and the scripted testing.  =
 - **Test Case:** 14  
@@ -240,7 +232,6 @@ AVAILABLE: $60.00
 - **Tests were performed with debit card with card number "1".  
 
 **Found In:** 1.0  
-**Integration Build:** N/A 
 
 ---
 
@@ -248,14 +239,12 @@ AVAILABLE: $60.00
 
 ### **Title:** Test Case #22: System does not handle correctly depositing requested amount into account  
 **Work Item Type:** Bug  
-**Assigned To:** Unassigned  
 **State:** Active  
 **Reason:** Approved  
 **Tags:** Exploratory; Scripted; Regression  
 **Priority:** 1  
 **Severity:** 1 - Critical  
 
-### Repro Steps:
 - **Version in which bug was found:** V1.0  
 - **Bug was found:** The bug was found in both the exploratory testing and the scripted testing.  
 - **Test Case:** 22  
@@ -351,22 +340,19 @@ AVAILABLE: $100.00
 - **Tests were performed with debit card with card number "1".  
 
 **Found In:** 1.0  
-**Integration Build:** N/A  
 
 ---
 
 ## Defect ID: 5
 
 ### **Title:** Test Case #29: Receipt is incorrect after completing a successful transfer - to and from accounts shown backwards  
-**Work Item Type:** Bug  
-**Assigned To:** Unassigned  
+**Work Item Type:** Bug   
 **State:** Active  
 **Reason:** Approved  
 **Tags:** Exploratory; Scripted; Regression  
 **Priority:** 2  
 **Severity:** 3 - Medium  
 
-### Repro Steps:
 - **Version in which bug was found:** V1.0  
 - **Bug was found:** The bug was found in both the exploratory testing and the scripted testing.  
 - **Test Case:** 29  
@@ -450,7 +436,6 @@ AVAILABLE: $1040.00
 - **Tests were performed with debit card with card number "1".  
 
 **Found In:** 1.0  
-**Integration Build:** N/A 
 
 
 
@@ -463,22 +448,19 @@ AVAILABLE: $1040.00
 - **Status after regression:** The bug was still present in the regression testing.  
 
 **Found In:** 1.0  
-**Integration Build:** N/A  
 
 ---
 
 ## Defect ID: 6
 
 ### **Title:** Test Case #29: Incorrect amount is transferred when making a transfer request  
-**Work Item Type:** Bug  
-**Assigned To:** Unassigned  
+**Work Item Type:** Bug   
 **State:** Active  
 **Reason:** Approved  
 **Tags:** Exploratory; Scripted; Regression   
 **Priority:** 1  
 **Severity:** 2 - High  
 
-### Repro Steps:
 - **Version in which bug was found:** V1.0  
 - **Bug was found:** The bug was found in both the exploratory testing and the scripted testing.  
 - **Test Case:** 29  
@@ -564,23 +546,20 @@ AVAILABLE: $1040.00
 - **Version in which bug was found:** V1.0  
 - **Tests were performed with debit card with card number "1".  
 
-**Found In:** 1.0  
-**Integration Build:** N/A  
+**Found In:** 1.0 
 
 ---
 
 ## Defect ID: 7
 
 ### **Title:** Test Case #33: Wrong options under balance inquiry for card 1  
-**Work Item Type:** Bug  
-**Assigned To:** Unassigned  
+**Work Item Type:** Bug
 **State:** Resolved  
 **Reason:** Fixed  
 **Tags:** Exploratory; Scripted; Regression;  
 **Priority:** 1  
 **Severity:** 1 - Critical  
 
-### Repro Steps:
 - **Version in which bug was found:** V1.0  
 - **Bug was found:** The bug was found in both the exploratory testing and the scripted testing.  
 - **Test Case:** 33  
@@ -638,23 +617,20 @@ AVAILABLE: $1040.00
 - **Tests were performed with debit card with card number "1".  
 - **Note:** Card number "1" should not have access to a Money Market account.  
 
-**Found In:** 1.0  
-**Integration Build:** <None>  
+**Found In:** 1.0 
 
 ---
 
 ## Defect ID: 8
 
 ### **Title:** Test Case #34: Incorrect Receipt from Inquiry: Card Number is Wrong  
-**Work Item Type:** Bug  
-**Assigned To:** Unassigned  
+**Work Item Type:** Bug 
 **State:** Active  
 **Reason:** Approved  
 **Tags:** Exploratory; Scripted; Regression  
 **Priority:** 1  
 **Severity:** 3 - Medium  
 
-### Repro Steps:
 - **Version in which bug was found:** V1.0  
 - **Bug was found:** The bug was found in both the exploratory testing and the scripted testing.  
 - **Test Case:** 34  
@@ -752,7 +728,6 @@ AVAILABLE: $100.00
 - **Version in which bug was found:** V1.0  
 - Tests were performed with debit card with card number "1".
 
-**Found In:** 1.0  
-**Integration Build:** N/A 
+**Found In:** 1.0
 
 ---
