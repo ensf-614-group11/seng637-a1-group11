@@ -11,25 +11,26 @@
 
 
 **Table of Contents**
+- [Introduction](#introduction)
+- [High-level description of the exploratory testing plan](#high-level-description-of-the-exploratory-testing-plan)
+- [Overall test plan](#overall-test-plan)
+  - [Test types](#test-types)
+  - [Scope of Testing](#scope-of-testing)
+  - [Test Logistics](#test-logistics)
+  - [Test Environment](#test-environment)
+  - [Test Tasks and Schedule](#test-tasks-and-schedule)
+  - [Test Deliverables](#test-deliverables)
+- [Results and Discussion](#results-and-discussion)
+- [Comparison of exploratory and manual functional testing](#comparison-of-exploratory-and-manual-functional-testing)
+  - [Exploratory Testing](#exploratory-testing)
+  - [Manual Scripted Testing](#manual-scripted-testing)
+  - [Conclusion](#conclusion)
+- [Notes and discussion of the peer reviews of defect reports](#notes-and-discussion-of-the-peer-reviews-of-defect-reports)
+- [Additional Issues Found](#additional-issues-found)
+- [How the pair testing was managed and team work/effort was divided](#how-the-pair-testing-was-managed-and-team-workeffort-was-divided)
+- [Difficulties encountered, challenges overcome, and lessons learned](#difficulties-encountered-challenges-overcome-and-lessons-learned)
+- [Comments/feedback on the lab and lab document itself](#commentsfeedback-on-the-lab-and-lab-document-itself)
 
-(When you finish writing, update the following list using right click, then
-“Update Field”)
-
-[1 Introduction	1](#_Toc439194677)
-
-[2 High-level description of the exploratory testing plan	1](#_Toc439194678)
-
-[3 Comparison of exploratory and manual functional testing	1](#_Toc439194679)
-
-[4 Notes and discussion of the peer reviews of defect reports	1](#_Toc439194680)
-
-[5 How the pair testing was managed and team work/effort was
-divided	1](#_Toc439194681)
-
-[6 Difficulties encountered, challenges overcome, and lessons
-learned	1](#_Toc439194682)
-
-[7 Comments/feedback on the lab and lab document itself	1](#_Toc439194683)
 
 # Introduction
 The system we are testing is an ATM simulation system. The purpose of the system is to allow users to deposit, withdraw, query and transfer funds to/from their hypothetical bank accounts. This report outlines the full process of how we planned the tests on the system, the results of these tests, a comparison of the results across the testing methodologies, and a discussion of how we worked as a team and any challenges we overcame.  
@@ -41,48 +42,48 @@ Our team had recently been introduced to exploratory and manual functional testi
 # High-level description of the exploratory testing plan
 **Scope of Testing**
 The exploratory test plan will involve:
-•	The exploratory testing phase will familiarize testers with the application. 
-•	Testers will start with exploring core system functionality, such as verifying that the system allows the Operator to start the system, and successfully access a valid account.
-•	Testers may explore unexpected behaviour, edge cases, and defects which are not covered by predefined manual functional tests.
-•	There will be a focus on high-risk areas, specifically debit card authentication, and transactions.
-•	Testing will be completed on the ATM System – Lab 1 Version 1.0 during this phase. 
+- The exploratory testing phase will familiarize testers with the application. 
+- Testers will start with exploring core system functionality, such as verifying that the system allows the Operator to start the system, and successfully access a valid account.
+- Testers may explore unexpected behaviour, edge cases, and defects which are not covered by predefined manual functional tests.
+- There will be a focus on high-risk areas, specifically debit card authentication, and transactions.
+- Testing will be completed on the ATM System – Lab 1 Version 1.0 during this phase. 
 
 **Priority 1: Core Functionalities** 
 
 These are the fundamental features that ensure the ATM is serving its main purpose:
-•	Card Insertion and PIN Validation: This is the very first point of interaction, so test card insertion (valid/invalid) and PIN validation right away. If there are any issues here, they affect all subsequent tests.
-•	Withdrawal: Perform at least one transaction to check whether the machine correctly dispenses cash, handles network issues, and prints a receipt.
-•	Deposit: Test the deposit functionality. Focus on ensuring the amount is correctly entered and the system can handle a basic deposit scenario.
-•	Balance Inquiry: A quick balance check will provide insight into how the system responds and if the right data is displayed.
-•	Transfer Between Accounts: Perform at least one transaction to check whether a customer can transfer money between two accounts linked to the card. 
+- Card Insertion and PIN Validation: This is the very first point of interaction, so test card insertion (valid/invalid) and PIN validation right away. If there are any issues here, they affect all subsequent tests.
+- Withdrawal: Perform at least one transaction to check whether the machine correctly dispenses cash, handles network issues, and prints a receipt.
+- Deposit: Test the deposit functionality. Focus on ensuring the amount is correctly entered and the system can handle a basic deposit scenario.
+- Balance Inquiry: A quick balance check will provide insight into how the system responds and if the right data is displayed.
+- Transfer Between Accounts: Perform at least one transaction to check whether a customer can transfer money between two accounts linked to the card. 
 
 These core functionalities are where we are most likely to find issues that can break the system in real-world usage. Complete one to two transactions in each of these areas (withdrawal, deposit, balance inquiry, transfer between accounts).
 
 **Priority 2: Edge Cases and Exceptional Paths** 
 Use the remaining time to test scenarios that are more likely to break the system or expose subtle issues:
-•	PIN Failures: Test what happens if the PIN is incorrect once or twice (check if the system allows retry). Make sure the card is retained after 3 failed attempts.
-•	Cancel Transaction Midway: Start a withdrawal and press "Cancel" halfway through to see how the system handles aborting a transaction. 
-•	Deposit Timeout: Simulate not depositing the envelope after a deposit has been initiated, and check if the ATM behaves as expected (e.g., does it notify the user of a failed deposit after timeout?).
+- PIN Failures: Test what happens if the PIN is incorrect once or twice (check if the system allows retry). Make sure the card is retained after 3 failed attempts.
+- Cancel Transaction Midway: Start a withdrawal and press "Cancel" halfway through to see how the system handles aborting a transaction. 
+- Deposit Timeout: Simulate not depositing the envelope after a deposit has been initiated, and check if the ATM behaves as expected (e.g., does it notify the user of a failed deposit after timeout?).
 
 
 **Priority 3: Security and Error Handling Checks** 
-•	Error Messages: Trigger errors (e.g. insufficient funds, request withdrawal that is not a multiple of $20) and see if the error messages are informative and user-friendly.
-•	Security Checks: Verify that the ATM retains the card after multiple failed PIN attempts.
+- Error Messages: Trigger errors (e.g. insufficient funds, request withdrawal that is not a multiple of $20) and see if the error messages are informative and user-friendly.
+- Security Checks: Verify that the ATM retains the card after multiple failed PIN attempts.
 
 **Test Logistics**
-•	Perform testing in a pair "Pair Testing." The tests will be done in pairs, with one tester interfacing with the ATM system, the other recording and documenting. Both pairs of testers will spend approximately 30 minutes carrying out the exploratory testing. 
-•	Testers have the responsibility to report findings with clear steps to reproduce identified bugs. Additional information such as logs should be included in the documented findings.
-•	Testers should also record any observations, risks, or areas that might need more focus in later testing phases.
-•	After the two pairs complete exploratory testing, the defect reports from each pair will be reviewed and compared. 
+- Perform testing in a pair "Pair Testing." The tests will be done in pairs, with one tester interfacing with the ATM system, the other recording and documenting. Both pairs of testers will spend approximately 30 minutes carrying out the exploratory testing. 
+- Testers have the responsibility to report findings with clear steps to reproduce identified bugs. Additional information such as logs should be included in the documented findings.
+- Testers should also record any observations, risks, or areas that might need more focus in later testing phases.
+- After the two pairs complete exploratory testing, the defect reports from each pair will be reviewed and compared. 
 
 # Overall test plan 
 The purpose of the test plan is to provide an overview of the testing approach for the ATM simulation system, including the test types, scope of testing, and test logistics. 
 
 ## Test types 
 The test approach consists of the following three test types:
-•	Exploratory Testing (Manual Non-scripted)
-•	Manual Scripted Testing 
-•	Regression Testing (Verification of Defect Fixes) 
+- Exploratory Testing (Manual Non-scripted)
+- Manual Scripted Testing 
+- Regression Testing (Verification of Defect Fixes) 
 
 ## Scope of Testing 
 The scope of testing is focused on the features and software system requirements as provided in Appendix B: High Level Requirements. It consists of testing the functionalities as defined in the requirements to check if the system matches the requirements. All types of testing included in the plan are black box testing, with use of the system interface and no access to the code. Items not listed in the requirements are not included in the test scope. The scope does not include any testing of hardware interfaces or communications interfaces. 
@@ -123,17 +124,17 @@ Table 1. Testing Task Schedule
 
 ## Test Deliverables 
 The before testing phase deliverables include: 
-•	Test plan
-•	Test cases for Manual Scripted Testing 
+- Test plan
+- Test cases for Manual Scripted Testing 
 
 The during testing phase deliverables include: 
-•	Test data
-•	Error logs and messages from the system 
+- Test data
+- Error logs and messages from the system 
 
 The after testing phase deliverables include: 
-•	Defect Report - Exploratory and Manual Scripted Testing
-•	Defect Report – Regression Testing
-•	Lab Report 
+- Defect Report: Exploratory and Manual Scripted Testing
+- Defect Report: Regression Testing
+- Lab Report 
 
 
 # Results and Discussion 
