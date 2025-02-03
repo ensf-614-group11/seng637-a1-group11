@@ -197,7 +197,7 @@ AVAILABLE: $40.00
 
 ### **Regression Testing:**
 **Regression Test Version:** V1.1  
-**Regression Test Outcome:** Bug is fixed in V1.1 but the required "Expected Outcome" is still not fully met. The system correctly executes the transaction, withdrawal request successfully completes for the expected amount. However, the dollar sign is missing on the GUI for the $60 option. The receipt still shows the wrong card number. The fix does not meet the expectations of "Expected Outcome" to close this bug.  
+**Regression Test Outcome:** Bug is fixed in V1.1 but the required "Expected Outcome" is still not fully met. The system correctly executes the transaction, withdrawal request successfully completes for the expected amount. However, the receipt still shows the wrong card number. The the dollar sign is also missing on the GUI for the $60 option (it was present previously).The fix does not meet the expectations of "Expected Outcome" to close this bug.  
 **Steps to Reproduce:**  
 1. Turn system on.  
 2. Operator adds 10 $20 bills to ATM System.  
@@ -301,7 +301,7 @@ AVAILABLE: $100.00
 
 ### **Regression Testing:**
 **Regression Test Version:** V1.1  
-**Regression Test Outcome:** The transaction is processed but the updated balance is $0.10 less than the expected value.  
+**Regression Test Outcome:** The transaction is processed but the updated balance does still not equal the expected value. The updated balance is now $0.10 less than the expected value.  
 **Steps to Reproduce:**  
 1. Turn system on.  
 2. Operator adds 10 $20 bills to ATM System.  
@@ -403,7 +403,7 @@ AVAILABLE: $1039.50
 
 ### **Regression Testing:**
 **Regression Test Version:** V1.1  
-**Regression Test Outcome:** This update fixes the receipt to show the to and from accounts correctly. Receipt now correctly shows a transfer from Savings account to Checking account.The amount of the transfer is now correct in the receipt but the accounts to and from listed on the receipt and the card number are still incorrect.  
+**Regression Test Outcome:** This update fixes the receipt to show the correct amount of the transfer. However, the accounts to and from listed on the receipt and the card number are still incorrect.  
 **Steps to Reproduce:** 
 1. Turn system on, enter amount of bills in system.  
 2. Click insert card, enter card number, enter correct PIN.  
@@ -411,7 +411,7 @@ AVAILABLE: $1039.50
 4. Click account to transfer from (e.g., savings).  
 5. Click account to transfer to (e.g., checking).  
 6. Enter amount to transfer (e.g., $20).  
-7. **ERROR:** The receipt is showing the wrong card number. A transfer inquiry for CARD 1 should be correctly indicated on the receipt.
+7. **ERROR:** Display message is incorrect, says accounts "to" and "from" backwards of what was selected (e.g., CHKG to SVGS). The receipt is showing the wrong card number. A transfer inquiry for CARD 1 should be correctly indicated on the receipt.
 
 **Log:**
 ```
@@ -514,7 +514,7 @@ AVAILABLE: $1039.50
 
 ### **Regression Testing:**  
 - **Regression Test Version:** V1.1  
-- **Regression Test Outcome:** This update fixes the receipt to show the to and from accounts correctly but receipt is showing the incorrect card number. The amount transferred is now correct on the receipt. The card number is showing "2" when the card number should be "1"  
+- **Regression Test Outcome:** This update fixes the receipt to show the amount transferred correctly, but receipt is showing the incorrect card number. The amount transferred is now correct on the receipt. The card number is showing "2" when the card number should be "1"  
 - **Steps to Reproduce:** 
 1. Turn system on, enter amount of bills in system.  
 2. Click insert card, enter card number, enter correct PIN.  
