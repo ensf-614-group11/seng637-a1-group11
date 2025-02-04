@@ -141,6 +141,8 @@ The after testing phase deliverables include:
 # Results and Discussion 
 Defects that were found during exploratory and scripted testing phases can be found in the markdown file named “seng631-a1-scripted_testing_defect_report.md”. This report was exported from Azure as a csv file and parsed into markdown format. The following image shows the “Work Items” page in Azure, where defects were input by the test team.
 
+![Azure Bug Reporting Sample](https://github.com/ensf-614-group11/seng637-a1-group11/blob/main/1_test_case_14_defect_report.png)
+
 ** EMBED IMAGE FROM AZURE HERE**
 
 Regression testing was performed on ATM System V1.1, following the outline “Steps to Reproduce” for defects identified in exploratory and manual scripted testing phases. Defects are not assigned a “Resolved” status unless the “Actual Outcome” requirement specified by the scripted testing is completely fulfilled. If a defect was found in exploratory testing and was not a Test Case in the manual scripted testing phase, then the status is set to “Resolved” if the defect is no longer occurring.
@@ -158,13 +160,9 @@ In contrast, manual scripted testing provided a more structured and systematic a
 
 While manual scripted testing was faster in terms of bug identification, it was somewhat limited in its ability to uncover unexpected issues. The rigid structure restricted our ability to deviate from the test scripts, potentially missing defects outside the predefined scenarios. However, the repeatability of these tests ensured reliability and made it easier to track regression issues over time.
 
-## Conclusion 
 Overall, both testing methods provided valuable insights into the ATM system's functionality. Exploratory testing allowed us to discover unforeseen defects through creative, adaptive exploration, while manual scripted testing offered efficiency and consistency in verifying known requirements. Combining both approaches enabled us to maximize defect detection and improve the system's overall quality.
 
 See below the defect report of the bugs we found during the exploratory and manual scripted testing. We were able to find all the bugs in the exploratory testing that we found in the manual scripted testing. We also found a couple extra bugs in the exploratory testing that we did not find in the manual scripted testing, due to the flexibility and creativity allowed during the exploratory testing.
-
-![Azure Bug Reporting Sample](https://github.com/ensf-614-group11/seng637-a1-group11/blob/main/1_test_case_14_defect_report.png)
-
 
 # Notes and discussion of the peer reviews of defect reports
 While the two pairs each completed exploratory testing separately, after some discussion we discovered that many of the bugs we found were the same. These were:
