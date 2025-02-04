@@ -143,8 +143,6 @@ Defects that were found during exploratory and scripted testing phases can be fo
 
 ![Azure Bug Reporting Sample](https://github.com/ensf-614-group11/seng637-a1-group11/blob/main/1_test_case_14_defect_report.png)
 
-** EMBED IMAGE FROM AZURE HERE**
-
 Regression testing was performed on ATM System V1.1, following the outline “Steps to Reproduce” for defects identified in exploratory and manual scripted testing phases. Defects are not assigned a “Resolved” status unless the “Actual Outcome” requirement specified by the scripted testing is completely fulfilled. If a defect was found in exploratory testing and was not a Test Case in the manual scripted testing phase, then the status is set to “Resolved” if the defect is no longer occurring.
 
 # Comparison of exploratory and manual functional testing
@@ -192,7 +190,6 @@ Exploratory testing was done in two pairs and separately. The findings for each 
 We then got together into a group of four to perform the manual scripted testing and regression testing, and subsequently updated the Azure DevOps to add new bugs and update old ones.
 
 We then divided the defect report and lab report among the four team members. Please note that this lab assignment was initially done in Microsoft Word, so the commit history does not accurately represent the workload split. The work was split evenly among the group of 4. Going forward, Github will be used so that the commit history accurately reflects the shared workload between all members.
-
 
 
 # Difficulties encountered, challenges overcome, and lessons learned
