@@ -553,7 +553,7 @@ AVAILABLE: $1040.00
 ## Defect ID: 7
 
 ### **Title:** Test Case #33: Wrong options under balance inquiry for card 1  
-**Work Item Type:** Bug
+**Work Item Type:** Bug  
 **State:** Resolved  
 **Reason:** Fixed  
 **Tags:** Exploratory; Scripted; Regression;  
