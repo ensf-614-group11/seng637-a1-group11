@@ -590,23 +590,7 @@ Savings account does not show as an option for balance inquiry when using Card 1
 6. Press 4 on interface number pad to access balance inquiry (option 4).  
 7. **ERROR:** There is no option to select "Savings Account" for account 1. There is an option for Money Market for account 2, but it gives an error when selected.  
 
-**Log:**
-```
-Message:   TRANSFER CARD# 1 TRANS# 1 FROM  0 TO  1 $40.00
-Response:  SUCCESS
-```
-
-**Receipt:**
-```
-Thu Jan 30 11:40:02 MST 2025
-First National Bank of Podunk
-ATM #42 Gordon College
-CARD 2 TRANS #1
-TRANSFER FROM: SVGS TO: CHKG
-AMOUNT: $40.00
-TOTAL BAL: $1040.00
-AVAILABLE: $1040.00
-```
+Note: This is a GUI related defect, so logging is not available.
 
 ### **Regression Testing:**
 **Regression Test Version:** V1.1  
@@ -674,24 +658,6 @@ TOTAL BAL: $100.00
 AVAILABLE: $100.00 
 ```
 
-**Log:**
-```
-Message:   TRANSFER CARD# 1 TRANS# 1 FROM  0 TO  1 $40.00
-Response:  SUCCESS
-```
-
-**Receipt:**
-```
-Thu Jan 30 11:40:02 MST 2025
-First National Bank of Podunk
-ATM #42 Gordon College
-CARD 2 TRANS #1
-TRANSFER FROM: SVGS TO: CHKG
-AMOUNT: $40.00
-TOTAL BAL: $1040.00
-AVAILABLE: $1040.00
-```
-
 ### **Regression Testing:**
 **Regression Test Version:** V1.1  
 **Regression Test Outcome:** The receipt is not correct. It shows Card 2 when the transaction was performed with Card 1. The balance shown was correct.  
@@ -703,14 +669,6 @@ AVAILABLE: $1040.00
 5. Click account to transfer to (e.g., checking).  
 6. Enter amount to transfer (e.g., $20).  
 7. **ERROR:** The receipt is showing the wrong card number. A transfer inquiry for CARD 1 should be correctly indicated on the receipt.
-
-**Log:**
-```
-Message:   INQUIRY  CARD# 1 TRANS# 1 FROM  2 NO TO NO AMOUNT
-Response:  FAILURE Invalid account type
-Message:   INQUIRY  CARD# 1 TRANS# 2 FROM  0 NO TO NO AMOUNT
-Response:  SUCCESS
-```
 
 **Receipt:**
 ```
