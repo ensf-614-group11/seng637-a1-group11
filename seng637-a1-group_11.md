@@ -161,7 +161,8 @@ While manual scripted testing was faster in terms of bug identification, it was 
 Overall, both testing methods provided valuable insights into the ATM system's functionality. Exploratory testing allowed us to discover unforeseen defects through creative, adaptive exploration, while manual scripted testing offered efficiency and consistency in verifying known requirements. Combining both approaches enabled us to maximize defect detection and improve the system's overall quality.
 
 See below the defect report of the bugs we found during the exploratory and manual scripted testing. We were able to find all the bugs in the exploratory testing that we found in the manual scripted testing. We also found a couple extra bugs in the exploratory testing that we did not find in the manual scripted testing, due to the flexibility and creativity allowed during the exploratory testing.
-**ADD DEFECT REPORT HERE**
+
+![Azure Bug Reporting Sample]([https://github.com/ensf-614-group11/seng637-a1-group11/blob/main/1_test_case_14_defect_report.png])
 
 
 # Notes and discussion of the peer reviews of defect reports
