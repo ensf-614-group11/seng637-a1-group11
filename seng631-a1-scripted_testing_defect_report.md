@@ -436,7 +436,9 @@ Savings account does not show as an option for balance inquiry when using Card 1
 4. Enter card number (choose card number 1).  
 5. Enter correct PIN for card number 1.  
 6. Press 4 on interface number pad to access balance inquiry (option 4).  
-7. **ERROR:** There is no option to select "Savings Account" for account 1. There is an option for Money Market for account 2, but it gives an error when selected.  
+7. **ERROR:** There is no option to select "Savings Account" for account 1. There is an option for Money Market for account 2, but it gives an error when selected.
+
+Note: This is a GUI related defect, so logging is not available.
 
 ### System Info:
 - **Version in which bug was found:** V1.0  
@@ -486,7 +488,7 @@ The receipt is not correct. It shows Card 2 when the transaction was performed w
 5. Enter correct PIN for card number 1.  
 6. Press 4 on interface number pad to access balance inquiry (option 4).  
 7. Press 1 on interface number pad to select checking account (option 1).  
-8. **ERROR:** The receipt provided displays Card #2 when the transaction was performed with Card #1.  
+8. **ERROR:** The receipt provided displays Card #2 when the transaction was performed with Card #1.
 
 ### Receipt:
 ```
